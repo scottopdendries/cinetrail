@@ -5,7 +5,7 @@ export default function CombinedContextProvider(props){
   return (
 <ThemeContextProvider>
     <UserContextProvider>
-{props.children}
+      {props.children}
         
     </UserContextProvider>
 </ThemeContextProvider>

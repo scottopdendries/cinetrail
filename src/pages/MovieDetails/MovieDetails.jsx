@@ -67,7 +67,7 @@ const addToFavorites=()=>{
       if(!token){
          alert('Please login to add a movie to your favorites.')
       }else{
-        axios.post(`${serverUrl}/favoriteMovies`,{
+        axios.post(`${serverUrl}favoriteMovies`,{
           user_id:user._id,
           movie_id:movie.id
         })
@@ -80,7 +80,7 @@ const addToFavorites=()=>{
 }
 
 const removeFromFavorites=()=>{
-      axios.delete(`${serverUrl}/favoriteMovies/${user._id}/${movie.id}`)
+      axios.delete(`${serverUrl}favoriteMovies/${user._id}/${movie.id}`)
       .then(res=>{
         console.log(res.data)
         setAdded(false)
@@ -89,7 +89,7 @@ const removeFromFavorites=()=>{
 }
 
 useEffect(() => {
-      axios.post(`${serverUrl}/favoriteMovies/search`,{ 
+      axios.post(`${serverUrl}favoriteMovies/search`,{ 
         user_id:user._id,
         tmdb_id:movie.id
       })

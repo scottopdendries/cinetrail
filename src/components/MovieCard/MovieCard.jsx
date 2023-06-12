@@ -1,11 +1,12 @@
 import React,{useState,useEffect} from 'react';
-import './movieCard.css';
+import './MovieCard.css';
 import {Link} from 'react-router-dom';
 import Rating from '../Rating/Rating';
 
  
 
 export default function MovieCard({data,imageUrl,width,height,cardStyle,radius}) {
+
 
 const [rating,setRating]=useState(Math.round(data?.vote_average/2))
 
@@ -22,7 +23,7 @@ const imageStyle={
 }
 
   return (
-    <Link  to={data.id ? `/moviedetails/${data?.id}` : `/moviedetails/${data?.tmdb_id}`} className={cardStyle}>
+    <Link  to={data.id ? `/moviedetails/${data?.id}`:`/moviedetails/${data?.tmdb_id}`} className={cardStyle}>
       <div style={imageStyle}>
           <div className="movie-info-top">
             <Rating movieRating={rating}/>

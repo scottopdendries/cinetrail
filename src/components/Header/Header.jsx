@@ -76,7 +76,7 @@ const handleTheme = () => {
          {
                     token 
                     ? <div className={darkMode ?"profile-container" : "profile-container profile-light" }>
-                        <img src={user.image_url} className="profile-img" onClick={()=>setProfileOptions(!profileOptions)}/>
+                        <img src={user.image_url} className="profile-img" onClick={()=>setProfileOptions(!profileOptions)} alt="profile-image"/>
                         <p>Welcome {user.username}<span></span></p>
                         {
                             profileOptions
